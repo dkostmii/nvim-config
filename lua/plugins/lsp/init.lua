@@ -1,6 +1,8 @@
+local dap_spec = require("plugins.lsp.dap")
 local null_ls_spec = require("plugins.lsp.null_ls")
 
 return {
+  dap_spec,
   null_ls_spec,
   {
     "williamboman/mason-lspconfig.nvim",
