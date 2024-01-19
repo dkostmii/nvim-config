@@ -4,17 +4,18 @@ endfunction
 
 function IndentStatus()
 	let indent_char_msg = ""
-	let shiftwidth_msg = ""
+
+	let shiftwidth_value = (&shiftwidth != 0 ? &shiftwidth : &tabstop)
+	let shiftwidth_msg = ">> " . shiftwidth_value
 
 	if &expandtab
 		let indent_char_msg = "SPCS: " . &tabstop
 	elseif &softtabstop != 0
-		let indent_char_msg = "SOFT: " . &tabstop . "/" . (&softtabstop != -1 ? &softtabstop : &shiftwidth)
+		let softtabstop_value = (&softtabstop > 0 ? &softtabstop : shiftwidth_value)
+		let indent_char_msg = "SOFT: " . &tabstop . "/" . softtabstop_value
 	else
 		let indent_char_msg = "TABS: " . &tabstop
 	endif
-
-	let shiftwidth_msg = ">> " . (&shiftwidth != 0 ? &shiftwidth : &tabstop)
 
 	return indent_char_msg . " " . shiftwidth_msg
 endfunction
