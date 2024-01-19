@@ -46,7 +46,19 @@ return {
         end,
       })
 
-      require("plugins.lsp.keymaps")
+      require("plugins.lsp.keymaps").set_global_keymaps()
+
+      local user_lsp_config_group = vim.api.nvim_create_augroup("UserLspConfig", {})
+
+      vim.api.nvim_create_autocmd("LspAttach", {
+        group = user_lsp_config_group,
+        callback = require("plugins.lsp.handlers").lsp_attach,
+      })
+
+      vim.api.nvim_create_autocmd("LspDetach", {
+        group = user_lsp_config_group,
+        callback = require("plugins.lsp.handlers").lsp_detach,
+      })
     end,
   },
 }
