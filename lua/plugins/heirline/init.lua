@@ -7,13 +7,30 @@ return {
         "neovim/nvim-lspconfig",
       },
     },
+    "nvim-tree/nvim-web-devicons",
   },
   config = function()
     local utils = require("heirline.utils")
     local conditions = require("heirline.conditions")
+    local get_hl = require("plugins.colorscheme.utils").get_hl
 
     require("heirline").setup({
-      statusline = nil,
+      statusline = {
+        require("plugins.heirline.components.mode").mode,
+        require("plugins.heirline.components.shared").alignment.space,
+        require("plugins.heirline.components.filename"),
+        require("plugins.heirline.components.shared").alignment.align,
+        require("plugins.heirline.components.fileformat"),
+        require("plugins.heirline.components.shared").alignment.space,
+        require("plugins.heirline.components.filetype"),
+        require("plugins.heirline.components.shared").alignment.space,
+        require("plugins.heirline.components.lsp_ts"),
+        require("plugins.heirline.components.shared").alignment.align,
+        require("plugins.heirline.components.indent"),
+        require("plugins.heirline.components.shared").alignment.space,
+        require("plugins.heirline.components.location"),
+        hl = { bg = get_hl("StatusLine").bg },
+      },
       winbar = {
         require("plugins.heirline.components.navic"),
       },
