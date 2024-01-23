@@ -24,5 +24,7 @@
   "plenary.nvim": { "branch": "master", "commit": "55d9fe89e33efd26f532ef20223e5f9430c8b0c0" },
   "solarized-osaka.nvim": { "branch": "main", "commit": "d3272bc510deecd423833771e443ab0eaf8cd802" },
   "telescope.nvim": { "branch": "master", "commit": "aacaa9cd031da83ce08d8fa5f19083d731f7f62c" },
+  "tmux.vim": { "branch": "master", "commit": "5616059b0db20cbd2b0bb67879ec89467ab7ab91" },
+  "vim-kitty": { "branch": "main", "commit": "891475671feebc4bf0f29f0a0987067913a81686" },
   "vim-vsnip": { "branch": "master", "commit": "8eebdf6ab4a880d845893f210fd20516d2e2384f" }
 }
