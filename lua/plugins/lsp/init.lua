@@ -25,6 +25,7 @@ return {
           "clangd",
           "emmet_language_server",
           "jdtls",
+          "jsonls",
           "lua_ls",
           "pyright",
           "rust_analyzer",
