@@ -25,6 +25,8 @@ return {
         require("plugins.heirline.components.filetype"),
         require("plugins.heirline.components.shared").alignment.space,
         require("plugins.heirline.components.lsp_ts"),
+        require("plugins.heirline.components.shared").alignment.space,
+        require("plugins.heirline.components.debugger"),
         require("plugins.heirline.components.shared").alignment.align,
         require("plugins.heirline.components.indent"),
         require("plugins.heirline.components.shared").alignment.space,
