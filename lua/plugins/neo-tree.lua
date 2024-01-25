@@ -20,5 +20,9 @@ return {
   },
   config = function()
     require("neo-tree").setup(opts)
+
+    vim.keymap.set("n", "<space>fe", "<cmd>Neotree filesystem toggle<cr>", {
+      desc = "Toggle Neo-tree file manager filesystem window",
+    })
   end,
 }
