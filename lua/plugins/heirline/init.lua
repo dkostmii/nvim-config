@@ -8,6 +8,7 @@ return {
       },
     },
     "nvim-tree/nvim-web-devicons",
+    "mfussenegger/nvim-dap",
   },
   config = function()
     local utils = require("heirline.utils")

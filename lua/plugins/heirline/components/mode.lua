@@ -43,6 +43,15 @@ local function getModeName(mode)
   return "UNKNOWN"
 end
 
+local keymap = {
+  condition = function()
+    return vim.bo.keymap ~= "" and (vim.bo.iminsert > 0 or vim.bo.imsearch > 0)
+  end,
+  provider = function()
+    return " (" .. vim.b.keymap_name .. ")"
+  end,
+}
+
 local mode_caption = {
   provider = function(self)
     local caption = self.mode_name
@@ -58,6 +67,7 @@ local mode_caption = {
 
     return vim.tbl_extend("error", colors_hl, { bold = defaults.bold })
   end,
+  keymap,
 }
 
 M.createModeWrapper = function(child, opts)
