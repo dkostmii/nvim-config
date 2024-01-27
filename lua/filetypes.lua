@@ -1,14 +1,14 @@
 vim.filetype.add({
   extension = {
-    mavka = 'mavka',
-    pu = 'plantuml',
-    puml = 'plantuml',
-    plantuml = 'plantuml',
+    mavka = "mavka",
+    pu = "plantuml",
+    puml = "plantuml",
+    plantuml = "plantuml",
   },
   pattern = {
-    [".*\\.мавка"] = 'mavka',
-    [".*\\.м"] = 'mavka',
-  }
+    [".*\\.мавка"] = "mavka",
+    [".*\\.м"] = "mavka",
+  },
 })
 
 local filetype_config_group = vim.api.nvim_create_augroup("UserFileTypeConfig", {})
