@@ -24,6 +24,7 @@ return {
           "biome",
           "clangd",
           "emmet_language_server",
+          "eslint",
           "jdtls",
           "jsonls",
           "lua_ls",
@@ -43,6 +44,32 @@ return {
                 require("nvim-navic").attach(client, bufnr)
               end
             end,
+          })
+        end,
+        ["emmet_language_server"] = function()
+          local package = require("mason-registry").get_package("emmet-language-server")
+          local dir = package:get_install_path()
+          local receipt = package:get_receipt():get()
+          local bin = dir .. "/" .. receipt.links.bin["emmet-language-server"]
+
+          require("lspconfig").emmet_ls.setup({
+            filetypes = {
+              "astro",
+              "css",
+              "eruby",
+              "html",
+              "htmldjango",
+              "javascriptreact",
+              "less",
+              "pug",
+              "sass",
+              "scss",
+              "svelte",
+              "svg",
+              "typescriptreact",
+              "vue",
+            },
+            cmd = { bin, "--stdio" },
           })
         end,
       })
