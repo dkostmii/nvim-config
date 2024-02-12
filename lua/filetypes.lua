@@ -6,8 +6,8 @@ vim.filetype.add({
     plantuml = "plantuml",
   },
   pattern = {
-    [".*\\.мавка"] = "mavka",
-    [".*\\.м"] = "mavka",
+    [".*мавка"] = "mavka",
+    [".*м"] = "mavka",
   },
 })
 
